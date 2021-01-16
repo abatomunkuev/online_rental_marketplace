@@ -1,0 +1,178 @@
+.pop-up {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    min-height: 100vh;
+    width: 100%;
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pop-up-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 25;
+    height: 100vh;
+    min-height: 100vh;
+    width: 100%;
+    min-width: 100%;
+    background-color: black;
+    opacity: 0.7;
+}
+.pop-up-content {
+    position: fixed;
+    z-index: 26;
+    background:#C9C9C9;
+    height: 60vh;
+    width: 35%;
+    opacity: 1;
+    display:flex;
+    flex-direction: column;
+    border-radius: 24px;
+}
+
+.pop-up-content > .close {
+    margin:16px;
+}
+
+.pop-up-content > .close > img {
+    cursor: pointer;
+}
+
+.pop-up-content-inner {
+    width: 80%;
+    margin: 0 auto 32px auto;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 80%;
+}
+.pop-up-content-inner h2 {
+    font-weight: 500;
+    font-size: 3.5rem;
+    margin-bottom: 32px;
+}
+.pop-up-content-inner form {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.pop-up-content-inner > form > .input {
+    display: flex;
+    flex-direction: column;
+}
+
+.pop-up-content-inner > form > .input > label {
+    margin: 8px 0px;
+    color: #6b6b6b;
+    font-weight: 300;
+    font-size: 1.7rem;
+}
+
+.pop-up-content-inner > form > .input > input {
+    height: 4vh;
+    border: 0;
+    border-radius: 8px;
+    margin: 8px 0px;
+    border:none;
+    width:100%;
+    padding: 1rem 1.5rem;
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.pop-up-content-inner > form > .buttons {
+    margin: 32px 0px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.pop-up-content-inner > form > .buttons > button {
+    width: 100%;
+    margin: 0px 16px;
+    height: 3.5vh;
+    border: 0;
+    border-radius: 8px;
+    font-weight: 400;
+    font-size: 1.8rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    cursor:pointer;
+}
+
+#loginButton {
+    background-color: #1e3d59;
+    color:#C9C9C9;
+}
+
+.pop-up-content-inner > form > .buttons > button > img {
+    width: 10%;
+    margin: 0 8px;
+}
+
+.error_message {
+    width: 100%;
+    height: 64px;
+}
+.error_message {
+    font-weight: 400;
+    font-size: 2rem;
+    color: #D00F0E;
+}
+
+/* Pop Up */
+
+/* Tablet */
+@media only screen and (max-width: 1024px) {
+    .pop-up-content {
+        width:70%;
+        height: 45vh;
+    }
+    .pop-up-content-inner > form > .input > input {
+        font-size: 3rem;
+    }
+}
+/* Mobile */ 
+@media only screen and (max-width: 414px) {
+    .pop-up {
+        align-items: flex-end;
+    }
+    .pop-up-content {
+        width: 90%!important;
+        height: 70vh!important;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    .pop-up-content-inner h2 {
+        margin-bottom: 0;
+    }
+    .pop-up-content-inner > form > .buttons button {
+        height: 4vh;
+        font-size: 2.4rem;
+        margin: 4px;
+    }
+    .pop-up-content-inner > form > .input > label {
+        font-size: 2.5rem;
+    }
+}
+
+@media only screen and (max-width: 350px)  {
+    .pop-up-content-inner h2 {
+        margin-bottom: 16px;
+    }
+}

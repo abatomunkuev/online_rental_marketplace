@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/search.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <title>Search results</title>
+</head>
+
+<body>
+    {{> popup}}
+    {{> header user}}
+    <main>
+        <div class="hidden-header"></div>
+        <div class="main-inner">
+            <div class="listings-side">
+                <div class="search-results">
+                    <p>Rooms in <b>{{request.location}}</b> from <b>{{request.checkIN}}</b> to
+                        <b>{{request.checkOUT}}</b></p>
+                </div>
+                <div id="roomList">
+                    {{#each data}}
+                    <div class="room">
+                        <div class="room-image-thumbnail">
+                            <img src="{{photos.[0]}}" alt="room image">
+                        </div>
+                        <div class="room-info">
+                            <a id="{{_id}}" href="/rooms/{{_id}}" class="title">
+                                <h4 id="/rooms/{{_id}}">{{title}}</h4>
+                            </a>
+                            <div class="features">
+                                <p>{{guests}} guests, {{bedrooms}} bedrooms</p>
+                            </div>
+                            <div class="info-addFav">
+                                <div class="price">
+                                    <h4>${{price}}CAD/night</h4>
+                                </div>
+                                <div class="addFav">
+                                    <abbr class="addFavIcon" title="Add to favorites">
+                                        {{#if favorite}}
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" style="fill: #EB4335;">
+                                            <path
+                                                d="M12 4.435c-1.989-5.399-12-4.597-12 3.568 0 4.068 3.06 9.481 12 14.997 8.94-5.516 12-10.929 12-14.997 0-8.118-10-8.999-12-3.568z"
+                                                id="{{_id}}" />
+                                        </svg>
+                                        {{else}}
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24">
+                                            <path
+                                                d="M12 4.435c-1.989-5.399-12-4.597-12 3.568 0 4.068 3.06 9.481 12 14.997 8.94-5.516 12-10.929 12-14.997 0-8.118-10-8.999-12-3.568z"
+                                                id="{{id}}" />
+                                        </svg>
+                                        {{/if}}
+                                    </abbr>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{else}}
+                    <p>No data available</p>
+                    {{/each}}
+                </div>
+            </div>
+            <div class="map">
+                <div id="mapid"></div>
+            </div>
+        </div>
+    </main>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="/js/utils/animHeadPop.js"></script>
+    <script>
+        var rooms = {{{ convert data }}}
+        console.log(rooms);
+    </script>
+    <script src="/js/search.js"></script>
+    <script src="/js/utils/validator.min.js"></script>
+    <script src="/js/login.js"></script>
+</body>
+
+</html>

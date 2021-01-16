@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/dark.css">
+    <meta name="google-site-verification" content="qI3OGnhAfY419dT8MsWZ9XcIohEBxt_g1KsaDmAfkyY" />
+    <title>Home</title>
+</head>
+
+<body>
+    {{> popup}}
+    <section id="introSection">
+        <div class="background-image">
+            <img src="/img/cityscape-during-night.jpg" alt="background-image">
+        </div>
+        <header id="introHeader">
+            <div class="introHeader-inner">
+                <div class="logo">
+                    <a href="/">Umbrella</a>
+                </div>
+                <div class="hamburger-menu-wrapper">
+                    <div class="hamburger-menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="menu" style="visibility: hidden">
+                        <nav>
+                            <div class="user">
+                                <img src="/img/svg/user.svg" alt="user">
+                            </div>
+                            <div class="menu-inner">
+                                {{#if data.firstName}}
+                                <a href='/dashboard'>Dashboard</a>
+                                <a href="/logout">Logout</a>
+                                {{else}}
+                                <a id="menuLoginButton">Login</a>
+                                <a href="/registration">Sign up</a>
+                                {{/if}}
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="intro-content">
+            <div class="intro-message" id="introMessage1">
+                <p class="animateIntro">Discover amazing places to live</p>
+            </div>
+            <form class="search-bar" id="searchBar" method="POST" action="/search">
+                <div class="search-bar-content" id="locationOption">
+                    <label for="location">Location</label>
+                    <select name="location" id="location">
+                        <option value="Any">Any</option>
+                        <option value="Toronto">Toronto</option>
+                        <option value="Ottawa">Ottawa</option>
+                        <option value="Montreal">Montreal</option>
+                        <option value="Vancouver">Vancouver</option>
+                    </select>
+                </div>
+                <div class="search-bar-content" id="check-inOption">
+                    <label for="checkIn">Check-in</label>
+                    <input type="date" name="checkIn" id="checkIn" value="" placeholder=" yyyy - mm - dd">
+                </div>
+                <div class="search-bar-content" id="check-outOption">
+                    <label for="checkOut">Check-out</label>
+                    <input type="date" name="checkOut" id="checkOut" value="" placeholder=" yyyy - mm - dd">
+                </div>
+                <div class="search-bar-content" id="guestsOption">
+                    <label for="guest">Guests</label>
+                    <select name="guest" id="guest">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+                <button type="submit">
+                    <p>Search</p> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        enable-background="new 0 0 24 24" viewBox="0 0 24 24">
+                        <path d="M11,22C4.935,22,0,17.065,0,11S4.935,0,11,0s11,4.935,11,11S17.065,22,11,22z M11,2c-4.962,0-9,4.037-9,9s4.038,9,9,9
+                        s9-4.037,9-9S15.962,2,11,2z" />
+                        <path d="M23,24c-0.256,0-0.512-0.098-0.707-0.293l-4.795-4.795c-0.39-0.391-0.39-1.024,0-1.414c0.391-0.391,1.024-0.391,1.415,0
+                        l4.794,4.795c0.391,0.391,0.391,1.023,0,1.414C23.512,23.902,23.256,24,23,24z" />
+                    </svg>
+                </button>
+            </form>
+            <div class="intro-message" id="introMessage2">
+                <p class="animateIntro">Easy to find new places</p>
+            </div>
+        </div>
+        <div class="scroll-for-more">
+            <div class="icon">
+                <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M40 1.37929C18.6704 1.37929 1.37932 18.6704 1.37932 40C1.37932 61.3296 18.6704 78.6207 40 78.6207C61.3296 78.6207 78.6207 61.3296 78.6207 40C78.6207 18.6704 61.3296 1.37929 40 1.37929Z"
+                        stroke="#C9C9C9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M24.8276 46.3118L39.3998 53.7931L53.9766 46.3118" stroke="#C9C9C9" stroke-width="3"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M39.3997 24.8276V53.4732" stroke="#C9C9C9" stroke-width="3" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+
+            </div>
+            <div class="scroll-for-more-text">
+                <p>Scroll for more</p>
+            </div>
+        </div>
+    </section>
+    <section id="bannerSection">
+        <a href="/rooms" class="banner banner1">
+            <div>
+                <div class="inner-banner-content">
+                    <h3>Explore unique places</h3>
+                    <p>There are a lot of unique places</p>
+                </div>
+            </div>
+        </a>
+        <a href="" class="banner banner2">
+            <div>
+                <div class="inner-banner-content">
+                    <h3>Make change</h3>
+                    <p>Support climate change fundings</p>
+                </div>
+            </div>
+        </a>
+        <a href="/rooms" class="banner banner3">
+            <div>
+                <div class="inner-banner-content">
+                    <h3>Begin travelling</h3>
+                    <p>Start your journey with us</p>
+                </div>
+            </div>
+        </a>
+    </section>
+    <section id="infoSection">
+        <div class="infoMessages">
+            <h1>Let's get to know each other.</h1>
+            <h3>Welcome to Umbrella community</h3>
+            <h3>What we provide</h3>
+        </div>
+        <div class="services">
+            <div class="services-inner experience">
+                <img src="/img/svg/young-boy-going-for-world-tour-2330118-0.svg" alt="">
+                <div class="service-content">
+                    <h1>Unique experience</h1>
+                    <p>There are a lot of things to explore. Start your amazing journey with us. We will provide best
+                        services to ensure that you are safe and encouraged to explore the world</p>
+                </div>
+            </div>
+            <div class="services-inner access">
+                <img src="/img/svg/world-tour-2061837-0.svg" alt="">
+                <div class="service-content">
+                    <h1>We are everywhere</h1>
+                    <p>Our services are accessible around the world. We keep growing our community. Our goal is by the
+                        end of the 2020 year to run our platform in as many places as we can </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{> footer}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="/js/utils/animHeadPop.js"></script>
+    <script src="/js/home.js"></script>
+    <script src="/js/utils/validator.min.js"></script>
+    <script src="/js/login.js"></script>
+</body>
+
+</html>

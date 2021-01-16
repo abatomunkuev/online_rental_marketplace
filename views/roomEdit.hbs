@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/addRoom.css">
+    <title>Dashboard</title>
+</head>
+
+<body>
+    {{> header data}}
+    <main>
+        <div class="hidden-header"></div>
+        <div class="main-inner">
+            <div class="sidePhoto">
+                <img src="/img/ezgif.com-crop.gif" alt="">
+                <div class="instructions">
+                    <h1 class='titleInstructions'>Instructions</h1>
+                    <div class="steps">
+                        <ol>
+                            <li class='step'>Update any fields that you wish</li>
+                            <p class='step'>Click on the update button.👍</p>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <div class="editInner">
+                <div class="main-inner-header">
+                    <h1>Room Editor 🏗️</h1>
+                </div>
+                <div class="main-inner-body">
+                    <form id="addRoomForm" action="/roomEdit/{{room._id}}" method="POST">
+                        {{#if error}}
+                        <p class="errorMessage">{{error}}</p>
+                        {{/if}}
+                        <div class="inputForm title">
+                            <label for="title">Title</label>
+                            <input type="text" name="title" id="title" placeholder="title" required="required"
+                                value="{{room.title}}">
+                        </div>
+                        <div class="inputForm description">
+                            <label for="description">Description</label>
+                            <textarea name="description" id="description" cols="30"
+                                rows="9">{{room.description}}</textarea>
+                        </div>
+                        <div class="inputForm address-wrapper">
+                            <div class="address">
+                                <label for="address">Address</label>
+                                <input type="text" name="address" id="address" placeholder="address"
+                                    required="required">
+                            </div>
+                            <div class="city">
+                                <label for="city">City</label>
+                                <select name="city" id="city">
+                                    <option selected value="{{room.location.city}}">{{room.location.city}}</option>
+                                    <option value="Toronto">Toronto</option>
+                                    <option value="Ottawa">Ottawa</option>
+                                    <option value="Montreal">Montreal</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="inputForm extra">
+                            <div class="inputSelect type">
+                                <label for="type">Type</label>
+                                <select name="type" id="type">
+                                    <option selected value="{{room.type}}">{{room.type}}</option>
+                                    <option value="room">Room</option>
+                                    <option value="studio">Studio</option>
+                                    <option value="house">House</option>
+                                </select>
+                            </div>
+                            <div class="inputSelect  guests">
+                                <label for="guests">Guests</label>
+                                <select name="guests" id="guests">
+                                    <option selected value="{{room.guests}}">{{room.guests}}</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                </select>
+                            </div>
+                            <div class="inputSelect  bedrooms">
+                                <label for="bedrooms">Bedrooms</label>
+                                <select name="bedrooms" id="bedrooms">
+                                    <option selected value="{{room.bedrooms}}">{{room.bedrooms}}</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                </select>
+                            </div>
+                            <div class="inputSelect  baths">
+                                <label for="baths">Baths</label>
+                                <select name="baths" id="baths">
+                                    <option selected value="{{room.baths}}">{{room.baths}}</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="inputForm amenities">
+                            <label for="amenities">Amenities</label>
+                            <div class="amenities-inner">
+                                <div class="amenity">
+                                    <p>Kitchen</p>
+                                    <input type="checkbox" name="amenities" value="kitchen">
+                                </div>
+                                <div class="amenity">
+                                    <p>Laundry</p>
+                                    <input type="checkbox" name="amenities" value="laundry">
+                                </div>
+                                <div class="amenity">
+                                    <p>Gym</p>
+                                    <input type="checkbox" name="amenities" value="gym">
+                                </div>
+                                <div class="amenity">
+                                    <p>TV</p>
+                                    <input type="checkbox" name="amenities" value="tv">
+                                </div>
+                                <div class="amenity">
+                                    <p>Bath</p>
+                                    <input type="checkbox" name="amenities" value="bath">
+                                </div>
+                                <div class="amenity">
+                                    <p>Wifi</p>
+                                    <input type="checkbox" name="amenities" value="wifi">
+                                </div>
+                                <div class="amenity">
+                                    <p>Bed</p>
+                                    <input type="checkbox" name="amenities" value="bed">
+                                </div>
+                                <div class="amenity">
+                                    <p>Fridge</p>
+                                    <input type="checkbox" name="amenities" value="fridge">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="inputForm price">
+                            <label for="price">Price</label>
+                            <input type="number" name="price" id="price" value="{{room.price}}" placeholder="price"
+                                required="required">
+                        </div>
+                        <div class="inputForm">
+                            <div class="button">
+                                <button type="submit">Update room</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    {{> footer}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="/js/utils/animHeadPop.js"></script>
+    <script src="/js/editRoom.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+<section class="pop-up">
+    <div class="pop-up-background" style="visibility:hidden"></div>
+    <div class="pop-up-content" style="visibility:hidden">
+        <div class="close">
+            <img id="closePopUp" src="/img/svg/close.svg" alt="">
+        </div>
+        <div class="pop-up-content-inner">
+            <h2 style="font-size: 2.8rem;">Choose the room to edit 🏗️</h2>
+            {{#if editrooms}}
+            <div class="rooms">
+                {{#each editrooms}}
+                <div class="room">
+                    <a href="/roomEdit/{{_id}}">{{increment @index}}. {{title}}</a>
+                </div>
+                {{/each}}
+            </div>
+            {{else}}
+            <h2>No rooms created</h2>
+            {{/if}}
+        </div>
+    </div>
+</section>

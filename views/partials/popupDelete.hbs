@@ -1,0 +1,22 @@
+<section class="pop-up">
+    <div id="pop-up-background-delete" class="pop-up-background" style="visibility:hidden"></div>
+    <div id="deletePopUP" class="pop-up-content" style="visibility:hidden">
+        <div class="close">
+            <img id="closePopUpDelete" src="/img/svg/close.svg" alt="">
+        </div>
+        <div class="pop-up-content-inner">
+            <h2 style="font-size: 2.8rem;">Choose the room to delete 🏗️</h2>
+            {{#if deleterooms}}
+            <div class="rooms">
+                {{#each deleterooms}}
+                <div class="room">
+                    <a href="/delete/{{_id}}">{{increment @index}}. {{title}}</a>
+                </div>
+                {{/each}}
+            </div>
+            {{else}}
+            <h2>No rooms created</h2>
+            {{/if}}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/room.css">
+    <title>Room Page</title>
+</head>
+
+<body>
+    {{> popup}}
+    {{> header user}}
+    <main>
+        <div class="hidden-header"></div>
+        <div class="main-intro">
+            <div class="main-header">
+                <div class="title">
+                    <h2>{{room.title}}</h2>
+                </div>
+                <div class="addFav">
+                    <abbr title="Add to favorites"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M12 4.435c-1.989-5.399-12-4.597-12 3.568 0 4.068 3.06 9.481 12 14.997 8.94-5.516 12-10.929 12-14.997 0-8.118-10-8.999-12-3.568z" />
+                        </svg></abbr>
+                </div>
+            </div>
+            <div class="photo-gallery">
+                <img src={{room.photos.[0]}} id="bigImage" alt="">
+                <img src={{room.photos.[1]}} id="smallImage1" alt="">
+                <img src={{room.photos.[2]}} id="smallImage2" alt="">
+                <img src={{room.photos.[3]}} id="smallImage3" alt="">
+                <img src={{room.photos.[4]}} id="smallImage4" alt="">
+            </div>
+            <div class="shortInfo">
+                <div class="shortDesc">
+                    <p>{{room.guests}} guests | {{room.bedrooms}} bedrooms | {{room.bedrooms}} beds | {{room.baths}}
+                        bath</p>
+                </div>
+                <div class="certified">
+                    <img src="/img/svg/star.svg" alt="">
+                    <p>Certified owner</p>
+                </div>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="descAndReserv">
+                <div class="description">
+                    <div class="description-inner">
+                        <h2>Description</h2>
+                        <p>{{room.description}}</p>
+                    </div>
+                </div>
+                <div class="reservation">
+                    <form action="/book/{{room._id}}" id="reservationForm" method="POST">
+                        <div class="price">
+                            <p><b>${{room.price}}</b> CAD/night</p>
+                        </div>
+                        <div class="calendar">
+                            <div class="imgCal">
+                                <svg height="512pt" viewBox="0 -66 512 512" width="512pt"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="m462 40h-4.011719c-4.636719-22.800781-24.847656-40-48.988281-40s-44.351562 17.199219-48.988281 40h-55.023438c-4.636719-22.800781-24.847656-40-48.988281-40s-44.351562 17.199219-48.988281 40h-54.023438c-4.636719-22.800781-24.847656-40-48.988281-40s-44.351562 17.199219-48.988281 40h-5.011719c-27.570312 0-50 22.429688-50 50v270c0 11.03125 8.96875 20 20 20h472c11.03125 0 20-8.96875 20-20v-270c0-27.570312-22.429688-50-50-50zm-53-20c13.039062 0 24.160156 8.359375 28.28125 20h-56.5625c4.121094-11.640625 15.242188-20 28.28125-20zm-153 0c13.039062 0 24.160156 8.359375 28.28125 20h-56.5625c4.121094-11.640625 15.242188-20 28.28125-20zm-152 0c13.039062 0 24.160156 8.359375 28.28125 20h-56.5625c4.121094-11.640625 15.242188-20 28.28125-20zm388 340-472 .011719s0 0 0-.011719v-240h472zm0-260h-472v-10c0-16.539062 13.460938-30 30-30h412c16.539062 0 30 13.460938 30 30zm0 0" />
+                                    <path
+                                        d="m90.21875 219.5c-16.542969 0-30-13.457031-30-30s13.457031-30 30-30c16.539062 0 30 13.457031 30 30s-13.460938 30-30 30zm0-40c-5.515625 0-10 4.484375-10 10s4.484375 10 10 10c5.511719 0 10-4.484375 10-10s-4.488281-10-10-10zm0 0" />
+                                    <path
+                                        d="m191.21875 219.5c-16.542969 0-30-13.457031-30-30s13.457031-30 30-30c16.539062 0 30 13.457031 30 30s-13.460938 30-30 30zm0-40c-5.515625 0-10 4.484375-10 10s4.484375 10 10 10c5.511719 0 10-4.484375 10-10s-4.488281-10-10-10zm0 0" />
+                                    <path
+                                        d="m291.21875 219.5c-16.542969 0-30-13.457031-30-30s13.457031-30 30-30c16.539062 0 30 13.457031 30 30s-13.460938 30-30 30zm0-40c-5.515625 0-10 4.484375-10 10s4.484375 10 10 10c5.511719 0 10-4.484375 10-10s-4.488281-10-10-10zm0 0" />
+                                    <path
+                                        d="m392.21875 219.5c-16.542969 0-30-13.457031-30-30s13.457031-30 30-30c16.539062 0 30 13.457031 30 30s-13.460938 30-30 30zm0-40c-5.515625 0-10 4.484375-10 10s4.484375 10 10 10c5.511719 0 10-4.484375 10-10s-4.488281-10-10-10zm0 0" />
+                                    <path
+                                        d="m457.464844 284.015625c-5.523438 0-10-4.476563-10-10v-105c0-5.519531 4.476562-10 10-10 5.523437 0 10 4.480469 10 10v105c0 5.523437-4.476563 10-10 10zm0 0" />
+                                    <path
+                                        d="m457.484375 320.015625c-5.523437 0-10.003906-4.476563-10.003906-10 0-5.519531 4.472656-10 9.996093-10h.007813c5.523437 0 10 4.480469 10 10 0 5.523437-4.476563 10-10 10zm0 0" />
+                                    <path
+                                        d="m90.21875 320.5c-16.542969 0-30-13.457031-30-30s13.457031-30 30-30c16.539062 0 30 13.457031 30 30s-13.460938 30-30 30zm0-40c-5.515625 0-10 4.484375-10 10s4.484375 10 10 10c5.511719 0 10-4.484375 10-10s-4.488281-10-10-10zm0 0" />
+                                    <path
+                                        d="m191.21875 320.5c-16.542969 0-30-13.457031-30-30s13.457031-30 30-30c16.539062 0 30 13.457031 30 30s-13.460938 30-30 30zm0-40c-5.515625 0-10 4.484375-10 10s4.484375 10 10 10c5.511719 0 10-4.484375 10-10s-4.488281-10-10-10zm0 0" />
+                                    <path
+                                        d="m291.21875 320.5c-16.542969 0-30-13.457031-30-30s13.457031-30 30-30c16.539062 0 30 13.457031 30 30s-13.460938 30-30 30zm0-40c-5.515625 0-10 4.484375-10 10s4.484375 10 10 10c5.511719 0 10-4.484375 10-10s-4.488281-10-10-10zm0 0" />
+                                    <path
+                                        d="m392.21875 320.5c-16.542969 0-30-13.457031-30-30s13.457031-30 30-30c16.539062 0 30 13.457031 30 30s-13.460938 30-30 30zm0-40c-5.515625 0-10 4.484375-10 10s4.484375 10 10 10c5.511719 0 10-4.484375 10-10s-4.488281-10-10-10zm0 0" />
+                                </svg>
+                            </div>
+                            <div class="calendar-inner">
+                                <div class="check-in check">
+                                    <label for="checkIn">Check-in</label>
+                                    <input type="date" name="checkIn">
+                                </div>
+                                <div class="check-out check">
+                                    <label for="checkOut">Check-out</label>
+                                    <input type="date" name="checkOut">
+                                </div>
+                            </div>
+                            <button type="submit">Book now</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="amenities">
+                <h2>Amenities</h2>
+                <div class="amenities-inner">
+                    <div class="amenities-side">
+                        <div class="amenity" id="kitchen">
+                            <img src="/img/svg/amenities/033-dinner.svg" alt="">
+                            <p>Kitchen</p>
+                        </div>
+                        <div class="amenity" id="laundry">
+                            <img src="/img/svg/amenities/016-washing-machine.svg" alt="">
+                            <p>Laundry</p>
+                        </div>
+                        <div class="amenity" id="tv">
+                            <img src="/img/svg/amenities/019-television.svg" alt="">
+                            <p>TV</p>
+                        </div>
+                        <div class="amenity" id="bath">
+                            <img src="/img/svg/amenities/030-bathtub.svg" alt="">
+                            <p>Bath</p>
+                        </div>
+                        <div class="amenity" id="wifi">
+                            <img src="/img/svg/amenities/029-wifi.svg" alt="">
+                            <p>Wifi</p>
+                        </div>
+                        <div class="amenity" id="gym">
+                            <img src="/img/svg/amenities/006-dumbbell.svg" alt="">
+                            <p>Gym</p>
+                        </div>
+                        <div class="amenity" id="bed">
+                            <img src="/img/svg/amenities/026-bed.svg" alt="">
+                            <p>Bed</p>
+                        </div>
+                        <div class="amenity" id="fridge">
+                            <img src="/img/svg/amenities/004-fridge.svg" alt="">
+                            <p>Fridge</p>
+                        </div>
+                    </div>
+                    <div class="hidden-side"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    {{> footer}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="/js/utils/animHeadPop.js"></script>
+    <script src="/js/room.js"></script>
+    <script src="/js/utils/validator.min.js"></script>
+    <script src="/js/login.js"></script>
+</body>
+
+</html>

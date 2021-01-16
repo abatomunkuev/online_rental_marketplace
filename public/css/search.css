@@ -1,0 +1,161 @@
+@import "./components/__global__.css";
+@import "./components/header.css";
+@import "./components/popUp.css";
+
+body {
+    overflow: hidden;
+}
+
+/* Main */
+main {
+    z-index: 10;
+    position: relative;
+    height: 100vh;
+    min-height: 100vh;
+    width: 100%;
+    min-width: 100%;
+}
+.hidden-header {
+    width:100%;
+    position: relative;
+    height: 10vh;
+}
+.main-inner {
+    position: relative;
+    width:100%;
+    min-width: 100%;
+    height: 90vh;
+    display:flex;
+    flex-direction: row;
+}
+
+.listings-side {
+    flex: 1;
+    display:flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+.map {
+    flex: 1;
+}
+
+#mapid {
+    height:100%;
+}
+.search-results {
+    flex: 1;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-results p {
+    font-size: 1.8rem;
+    font-family: 300;
+}
+#roomList {
+    position: relative;
+    flex: 3;
+    overflow-y: auto;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+}
+.room {
+    width: 100%;
+    min-height: 22vh;
+    height: 22vh;
+    border-radius: 16px;
+    display:flex;
+    margin: 24px 0;
+    border: 1px solid #b8b8b8;
+    text-decoration: none;
+}
+
+.room-image-thumbnail {
+    flex: 1;
+    margin: 16px;
+    border-radius: 8px;
+}
+
+.room-image-thumbnail img {
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.room-info {
+    flex: 1.5;
+    margin: 24px 24px 24px 0;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.title h4 {
+    font-weight: 400;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.features {
+    border-top: 0.5px solid #b8b8b8;
+    border-bottom: 0.5px solid #b8b8b8;
+    padding: 24px 0;
+}
+
+.features p {
+    font-weight: 300;
+    font-size:1.3rem;
+    color: #868686;
+}
+
+.info-addFav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.price h4 {
+    font-weight: 500;
+    font-size: 2rem;
+}
+
+.addFav > abbr > svg {
+    width: 25px;
+    fill: #868686;
+    transition: fill 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.addFav > abbr > svg:hover {
+    fill: #EB4335;
+}
+
+
+@media only screen and (max-width: 1024px)  {
+    .map {
+        display:none;
+    }
+    
+}
+
+@media only screen and (max-width: 350px) {
+    .room-info > .title h4 {
+        font-size: 1.6rem;
+    }
+    .room-info > .features {
+        padding: 8px;
+    }
+    .price h4 {
+        font-size: 1.8rem;
+    }
+    .addFav > abbr > svg {
+        width:15px;
+    }
+}

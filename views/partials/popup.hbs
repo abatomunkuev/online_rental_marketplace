@@ -1,0 +1,26 @@
+<section class="pop-up">
+    <div class="pop-up-background" style="visibility:hidden"></div>
+    <div class="pop-up-content" style="visibility:hidden">
+        <div class="close">
+            <img id="closePopUp" src="/img/svg/close.svg" alt="">
+        </div>
+        <div class="pop-up-content-inner">
+            <h2>Welcome back! 👋</h2>
+            <form id='loginForm'>
+                <p id="errorMessage" class="error_message"></p>
+                <div class="input username-field">
+                    <label for="username">Username / email</label>
+                    <input id="login_username" type="username" name='username' required="required">
+                </div>
+                <div class="input password-field">
+                    <label for="password">Password</label>
+                    <input id="login_password" type="password" name='password' required="required">
+                </div>
+                <div class="buttons">
+                    <button id="loginButton" type="submit">Login</button>
+                    <button disabled>Login with<img src="/img/svg/google.svg" alt=""></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,219 @@
+@import "./components/__global__.css";
+@import "./components/header.css";
+@import "./components/footer.css";
+@import "./components/popUp.css";
+
+main {
+    z-index: 10;
+    position: relative;
+    height: 100vh;
+    min-height: 100vh;
+    width: 100%;
+    min-width: 100%;
+}
+
+.hidden-header {
+    width:100%;
+    position: relative;
+    height: 10vh;
+}
+.main-inner {
+    position: relative;
+    width:100%;
+    min-width: 100%;
+    height: 90vh;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-inner h1 {
+    font-size: 4rem;
+    font-weight: 600;
+}
+.main-inner h2 {
+    font-size: 3rem;
+    font-weight: 500;
+    margin: 32px 0;
+}
+
+.main-inner p {
+    font-size: 2rem;
+    font-weight: 300;
+    margin:4px;
+}
+.Message {
+    margin: 25px;
+}
+
+
+.dashboard {
+    margin: 15px;
+    width:80%;
+    height: 60vh;
+    border: 1px solid #b8b8b8;
+    border-radius: 16px;
+    display: flex;
+}
+
+.userinfo {
+    flex:1;
+    width:100%;
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+}
+.userinfo-inner {
+    flex:1;
+    width: 80%;
+    margin: 0 auto;
+}
+.addBnB {
+    flex:1;
+    width:80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+.addBnB a {
+    text-decoration: none;
+    color: black;
+    font-size: 2rem;
+}
+
+.userinfo-inner-header {
+    width: 100%;
+    margin-bottom: 15px;
+}
+.addBnB-inner-header {
+    flex:1;
+    width: 100%;
+    height: 25%;
+    margin-bottom: 15px;
+}
+.addBnB-inner-body {
+    flex: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.buttons {
+    background-color: #818181;
+    width:160px;
+    height: 50px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    transition: background-color 0.3s ease-in-out;
+}
+.addBnb-button {
+    background-color: #9e762a;
+}
+.addBnb-button:hover {
+    background-color: #FFBF46;
+}
+
+.updateBnb-button {
+    background-color: #389c64;
+}
+.updateBnb-button:hover {
+    background-color: #59FFA0;
+}
+.removeBnb-button:hover {
+    background-color: #ff6c59;
+}
+.BnBinfo {
+    flex:1;
+    width:100%;
+    height: 100%;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    border-left: 1px solid #828282;
+}
+
+.BnBinfo-inner-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #828282;
+}
+
+.BnBinfo-inner-header h1{
+    font-size: 3rem;
+    font-weight: 500;
+    margin: 32px 0;
+}
+
+.rooms {
+    width:100%;
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+    margin-top: 32px;
+}
+
+.room {
+    margin: 8px 0;
+}
+
+.room a {
+    font-size: 2rem;
+    color: #828282;
+    transition: color 0.3s ease-in-out;
+}
+.room a:hover {
+    color: black;
+}
+.logoutButton {
+    margin: 25px 5px;
+    width:120px;
+    height: 40px; 
+}
+.logoutButton a {
+    color: #000;
+    font-size: 2rem; 
+}
+
+.logoutButton:hover {
+    background-color: #b3b3b3;
+}
+
+footer {
+    margin-top:0;
+}
+
+@media only screen and (max-width: 414px) {
+    .Message {
+        text-align: center;
+    }
+    .main-inner h2 {
+        font-size: 2.5rem;
+        font-weight: 500;
+        margin: 32px 0;
+    }
+    .buttons {
+        width:90px;
+        height: 30px;
+        border-radius: 8px;
+    }
+
+    .userinfo {
+        overflow-y: auto;
+    }
+
+    .addBnB a {
+        font-size: 1.5rem;
+    }
+
+    .logoutButton a {
+        font-size: 1.5rem; 
+    }
+
+}

@@ -1,0 +1,121 @@
+@import "./components/__global__.css";
+@import "./components/header.css";
+@import "./components/footer.css";
+@import "./components/popUp.css";
+
+main {
+    z-index: 10;
+    position: relative;
+    height: 100vh;
+    min-height: 120vh;
+    width: 100%;
+    min-width: 100%;
+}
+
+.hidden-header {
+    width:100%;
+    position: relative;
+    height: 10vh;
+}
+.main-inner {
+    position: relative;
+    width:100%;
+    min-width: 100%;
+    height: 90vh;
+    display:flex;
+    flex-direction: column;
+}
+
+.main-inner h1 {
+    font-size: 3.7rem;
+    font-weight: 600;
+}
+.main-inner h2 {
+    font-size: 3rem;
+    font-weight: 400;
+    margin: 32px 0;
+}
+
+.main-inner p {
+    font-size: 2rem;
+    font-weight: 300;
+    color: #797979;
+}
+.thankMessages {
+    flex: 1;
+    width:100%;
+    position: relative;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.thankMessage {
+    margin: 5px;
+}
+
+.thankMessage a {
+    font-weight: 500;
+}
+
+footer {
+    margin-top:0;
+}
+
+.information {
+    flex:2;
+    width:80%;
+    margin: 0 auto;
+    display:flex;
+    flex-direction: column;
+}
+
+.userInformation {
+    flex: 1;
+    border-bottom: 1px solid #C4C4C4;
+}
+
+.userInformation h1 {
+    font-size: 2.8rem;
+    font-weight: 500;
+}
+
+.userInformation p {
+    margin:16px 0;
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+
+.roomInformation {
+    flex: 3;
+    margin-top:24px
+}
+
+.roomInformation h1 {
+    font-size: 2.8rem;
+    font-weight: 500;
+}
+
+.roomInformation p {
+    margin:16px 0;
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+.roomInformation p:nth-child(6) {
+    padding-bottom: 16px;
+    border-bottom: 1px solid #C4C4C4;
+}
+
+.roomInformation p:nth-child(7) {
+    font-weight: 600;
+    color:black;
+    font-size: 2.5rem;
+}
+
+@media only screen and (max-width: 414px) {
+    .thankMessage {
+        text-align: center;
+    }
+}
