@@ -2,13 +2,13 @@
   "name": "prototype-assignment",
   "version": "1.0.0",
   "description": "This is a prototype for assignment 1",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/server.js"
+    "start": "node src/index.js"
   },
   "engines": {
-    "node": "14.x"
+    "node": "18.x"
   },
   "author": "Andrei Batomunkuev",
   "license": "MIT",
