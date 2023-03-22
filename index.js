@@ -7,14 +7,14 @@ const clientSessions = require('client-sessions');
 const exphbs = require('express-handlebars');
 const mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-const userRouter = require('./routers/user');
-const roomRouter = require('./routers/room');
+const userRouter = require('./src/routers/user');
+const roomRouter = require('./src/routers/room');
 mongoose.Promise = require('bluebird');
 
 
 
 // Configurations start ------------------------------------
-const config = require("./db/config");
+const config = require("./src/db/config");
 const connectionString = config.database_connection_string;
 
 mongoose.connect(connectionString, { useNewUrlParser: true, useUnifiedTopology: true,useCreateIndex: true });
